@@ -1,0 +1,155 @@
+.textSection {
+  margin: 4rem 0;
+  // Додайте шлях до фонового зображення текстового блоку тут:
+  background-image: url("/images/backgrounds/text-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+
+  // Оверлей для фонового зображення
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 26, 46, 0.6);
+    border-radius: 20px;
+    z-index: 0;
+  }
+}
+
+// Якщо ви не хочете використовувати фонове зображення, розкоментуйте це:
+
+.textSection {
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.textBlock {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #64ffda, #4fd1c7, #64ffda);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(100, 255, 218, 0.15);
+    transition: all 0.3s ease;
+  }
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #64ffda;
+  margin: 0 0 2rem 0;
+  text-align: center;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #64ffda, transparent);
+  }
+}
+
+.content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.paragraph {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 1.5rem 0;
+  text-align: justify;
+  position: relative;
+  padding-left: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7rem;
+    width: 4px;
+    height: 4px;
+    background: #64ffda;
+    border-radius: 50%;
+  }
+
+  &:first-child::before {
+    display: none;
+  }
+
+  &:first-child {
+    padding-left: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.95);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .textSection {
+    padding: 1rem;
+  }
+
+  .textBlock {
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .content {
+    font-size: 1rem;
+  }
+
+  .paragraph {
+    text-align: left;
+  }
+}

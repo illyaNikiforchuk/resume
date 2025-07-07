@@ -1,0 +1,349 @@
+.mediaSection {
+  margin: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  // Додайте шлях до фонового зображення медіа секції тут:
+  background-image: url('/images/backgrounds/media-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+
+  // Оверлей для фонового зображення
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 26, 46, 0.6);
+    border-radius: 20px;
+    z-index: 0;
+  }
+}
+
+.carouselSection {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.carouselTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #64ffda;
+  text-align: center;
+  margin: 0 0 2rem 0;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #64ffda, transparent);
+  }
+}
+
+.carouselContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.carouselBtn {
+  background: rgba(100, 255, 218, 0.2);
+  border: 2px solid #64ffda;
+  color: #64ffda;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  flex-shrink: 0;
+
+  &:hover:not(:disabled) {
+    background: #64ffda;
+    color: #1a1a2e;
+    transform: scale(1.1);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.carouselWrapper {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.carouselTrack {
+  display: flex;
+  width: 100%;
+}
+
+.carouselSlide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+.slideContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(100, 255, 218, 0.15);
+  }
+}
+
+.videoWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.imageWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.imageContainer {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  width: 100%;
+
+  &:hover .imageOverlay {
+    opacity: 1;
+  }
+
+  &:hover .image {
+    transform: scale(1.05);
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.zoomIcon {
+  font-size: 2rem;
+  color: #64ffda;
+  animation: pulse 2s infinite;
+}
+
+.mediaTitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #64ffda;
+  text-align: center;
+  padding: 0.5rem;
+  background: rgba(100, 255, 218, 0.1);
+  border-radius: 15px;
+  border: 1px solid rgba(100, 255, 218, 0.3);
+  width: 100%;
+  line-height: 1.2;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(100, 255, 218, 0.7);
+    transform: scale(1.1);
+  }
+
+  &.activeIndicator {
+    background: #64ffda;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+// Респонсивність
+@media (max-width: 1200px) {
+  .carouselContainer {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .carouselContainer {
+    gap: 0.5rem;
+  }
+
+  .carouselBtn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .slideContent {
+    padding: 0.75rem;
+  }
+
+  .video,
+  .image {
+    max-height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mediaSection {
+    gap: 3rem;
+    padding: 1rem;
+  }
+
+  .carouselTitle {
+    font-size: 1.5rem;
+  }
+
+  .carouselContainer {
+    position: relative;
+  }
+
+  .carouselBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+
+    &:first-child {
+      left: -20px;
+    }
+
+    &:last-child {
+      right: -20px;
+    }
+  }
+
+  .carouselWrapper {
+    width: 100%;
+  }
+
+  .slideContent {
+    padding: 0.5rem;
+  }
+
+  .video,
+  .image {
+    max-height: 120px;
+  }
+
+  .mediaTitle {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carouselBtn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+    
+    &:first-child {
+      left: -15px;
+    }
+
+    &:last-child {
+      right: -15px;
+    }
+  }
+
+  .video,
+  .image {
+    max-height: 150px;
+  }
+
+  .slideContent {
+    gap: 0.5rem;
+  }
+}

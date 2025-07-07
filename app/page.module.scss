@@ -1,0 +1,47 @@
+.container {
+  min-height: 100vh;
+  // Додайте шлях до вашого головного фонового зображення тут:
+  background-image: url('/images/backgrounds/main-background.jpg');
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  position: relative;
+
+  // Якщо є фонове зображення, додаємо оверлей
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 26, 46, 0.7); // Темний оверлей для читабельності
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+// Якщо ви хочете використовувати фонове зображення замість градієнта, розкоментуйте це:
+
+.container {
+  background-image: url('/images/backgrounds/main-background.jpg');
+}
+
+
+.main {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 1rem 0.5rem;
+  }
+}

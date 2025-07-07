@@ -1,0 +1,111 @@
+.infoSection {
+  margin: 4rem 0;
+  // Додайте шлях до фонового зображення info секції тут:
+  background-image: url('/images/backgrounds/info-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+
+  // Оверлей для фонового зображення
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 26, 46, 0.6);
+    border-radius: 20px;
+    z-index: 0;
+  }
+}
+
+// Якщо ви не хочете використовувати фонове зображення, розкоментуйте це:
+
+.infoSection {
+}
+*
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.infoBlock {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
+  }
+}
+
+.blockTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #64ffda;
+  margin: 0 0 1.5rem 0;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, #64ffda, transparent);
+  }
+}
+
+.blockList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  padding-left: 1.5rem;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #64ffda;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 768px) {
+  .infoSection {
+    padding: 1rem;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .infoBlock {
+    padding: 1.5rem;
+  }
+}
