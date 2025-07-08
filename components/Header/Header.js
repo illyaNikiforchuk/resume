@@ -21,7 +21,7 @@ export default function Header({
           loop
           playsInline
           preload="metadata"
-          poster="/images/backgrounds/header-background.jpg" // Fallback зображення
+          poster="/images/backgrounds/main-background.jpg" // Fallback зображення
         >
           <source
             src="/images/backgrounds/header-background.mp4"
