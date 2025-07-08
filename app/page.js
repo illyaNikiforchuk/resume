@@ -40,6 +40,7 @@ const translations = {
       title: "Education",
       items: [
         "Arbitrage up gambling fb (2025)",
+        "Genius Space Target fb (2025)",
         "IT Step Academy React FRONTEND DEVELOPER(2020 - 2021)",
       ],
     },
@@ -87,6 +88,7 @@ const translations = {
       title: "Освіта",
       items: [
         "Arbitrage up gambling fb (2025)",
+        "Genius Space Target fb (2025)",
         "IT Step Academy React FRONTEND DEVELOPER(2020 - 2021)",
       ],
     },
