@@ -1,0 +1,395 @@
+.resumeSection {
+  margin: 2rem 0 4rem 0;
+  // Додайте шлях до фонового зображення resume секції тут:
+  background-image: url('/images/backgrounds/resume-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+
+  // Оверлей для фонового зображення
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 26, 46, 0.6);
+    border-radius: 20px;
+    z-index: 0;
+  }
+}
+
+// Якщо ви не хочете використовувати фонове зображення, розкоментуйте це:
+/*
+.resumeSection {
+  background-image: none;
+  background: rgba(255, 255, 255, 0.02);
+}
+*/
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.resumeCard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #64ffda, #4fd1c7, #64ffda);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(100, 255, 218, 0.15);
+  }
+}
+
+.imageSection {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.imageWrapper {
+  position: relative;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 50px rgba(100, 255, 218, 0.2);
+  }
+
+  &:hover .imageOverlay {
+    opacity: 1;
+  }
+}
+
+.resumeImage {
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+}
+
+.zoomIcon {
+  font-size: 3rem;
+  color: #64ffda;
+  margin-bottom: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+.overlayText {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.decorativeElements {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  position: absolute;
+  border: 2px solid rgba(100, 255, 218, 0.2);
+  border-radius: 50%;
+  animation: rotate 15s linear infinite;
+
+  &:nth-child(1) {
+    width: 150px;
+    height: 150px;
+    top: 25px;
+    left: 25px;
+  }
+
+  &:nth-child(2) {
+    width: 180px;
+    height: 180px;
+    top: 10px;
+    left: 10px;
+    animation-delay: -5s;
+    animation-duration: 20s;
+  }
+
+  &:nth-child(3) {
+    width: 200px;
+    height: 200px;
+    top: 0;
+    left: 0;
+    animation-delay: -10s;
+    animation-duration: 25s;
+  }
+}
+
+.content {
+  flex: 1;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #64ffda;
+  margin: 0 0 1rem 0;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #64ffda, transparent);
+  }
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 0 2rem 0;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.downloadBtn,
+.viewBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+  }
+
+  &:hover::before {
+    left: 100%;
+  }
+}
+
+.downloadBtn {
+  background: linear-gradient(135deg, #64ffda, #4fd1c7);
+  color: #1a1a2e;
+  box-shadow: 0 8px 25px rgba(100, 255, 218, 0.3);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(100, 255, 218, 0.4);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+.viewBtn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #64ffda;
+  border: 2px solid #64ffda;
+  backdrop-filter: blur(10px);
+
+  &:hover {
+    background: rgba(100, 255, 218, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(100, 255, 218, 0.2);
+  }
+}
+
+.btnIcon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.downloadBtn:hover .btnIcon {
+  transform: translateY(2px);
+}
+
+.viewBtn:hover .btnIcon {
+  transform: scale(1.1);
+}
+
+// Анімації
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Респонсивність
+@media (max-width: 768px) {
+  .resumeSection {
+    padding: 1rem;
+    margin: 1rem 0 3rem 0;
+  }
+
+  .resumeCard {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .imageWrapper {
+    max-width: 250px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .buttonGroup {
+    justify-content: center;
+  }
+
+  .downloadBtn,
+  .viewBtn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resumeCard {
+    padding: 1.5rem;
+  }
+
+  .imageWrapper {
+    max-width: 200px;
+  }
+
+  .decorativeElements {
+    width: 150px;
+    height: 150px;
+  }
+
+  .circle {
+    &:nth-child(1) {
+      width: 100px;
+      height: 100px;
+      top: 25px;
+      left: 25px;
+    }
+
+    &:nth-child(2) {
+      width: 125px;
+      height: 125px;
+      top: 12px;
+      left: 12px;
+    }
+
+    &:nth-child(3) {
+      width: 150px;
+      height: 150px;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .downloadBtn,
+  .viewBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}

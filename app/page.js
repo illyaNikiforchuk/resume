@@ -7,6 +7,7 @@ import InfoSection from "../components/InfoSection/InfoSection";
 import MediaBlocks from "../components/MediaBlocks/MediaBlocks";
 import Footer from "../components/Footer/Footer";
 import TextBlock from "../components/TextBlock/TextBlock";
+import ResumePhoto from "../components/ResumePhoto/ResumePhoto";
 
 const translations = {
   en: {
@@ -56,7 +57,14 @@ const translations = {
       content:
         "At the moment, I’ve launched three advertising campaigns targeting Liberia, Argentina, and Bangladesh. Each campaign involved dozens of tests, creative variations, and optimization approaches. I continue to test actively, analyze results, and build hands-on experience to achieve maximum performance.My background in web development, video editing skills, and experience with tools like Canva give me a strong advantage — I can independently build and refine full funnels and quickly adapt to new challenges.I’d be happy to contribute to your team and grow together. Please note that the information on this landing page might be outdated — I’m happy to provide the latest updates upon request.",
     },
+    resumePhoto: {
+      title: "My Resume",
+      downloadBtn: "Download Image",
+      viewBtn: "View Full Size",
+      description: "View my complete resume",
+    },
   },
+
   uk: {
     name: "Нікіфорчук Ілля",
     title: "media buyer / frontend developer",
@@ -104,6 +112,12 @@ const translations = {
       content:
         "На даний момент я запустив три рекламні кампанії на такі гео, як Ліберія, Аргентина та Бангладеш. У рамках кожної з них провів десятки тестів, варіацій креативів і підходів до оптимізації. Продовжую активно тестувати, аналізувати результати та «набивати руку» для досягнення максимальної ефективності.Мій досвід у розробці сайтів, навички монтажу відео та робота з інструментами на кшталт Canva дають мені велику перевагу — я можу самостійно створювати повноцінні зв'язки та швидко адаптуватися до нових викликів.Буду радий зробити свій внесок у вашу команду та зростати разом із вами.Інформація, представлена на цьому лендингу, може бути вже неактуальною, тож із радістю надам оновлену — за запитом.",
     },
+    resumePhoto: {
+      title: "Моє резюме",
+      downloadBtn: "Завантажити зображення",
+      viewBtn: "Переглянути повний розмір",
+      description: "Переглянути моє повне резюме",
+    },
   },
 };
 
@@ -120,7 +134,7 @@ export default function Home() {
         title={t.title}
         description={t.description}
       />
-
+      <ResumePhoto resumePhoto={t.resumePhoto} />
       <main className={styles.main}>
         <InfoSection
           experience={t.experience}
