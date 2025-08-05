@@ -1,6 +1,5 @@
 .infoSection {
   margin: 4rem 0;
-  // Додайте шлях до фонового зображення info секції тут:
   background-image: url('/images/backgrounds/info-background.jpg');
   background-size: cover;
   background-position: center;
@@ -9,7 +8,6 @@
   padding: 2rem;
   position: relative;
 
-  // Оверлей для фонового зображення
   &::before {
     content: '';
     position: absolute;
@@ -23,12 +21,6 @@
   }
 }
 
-// Якщо ви не хочете використовувати фонове зображення, розкоментуйте це:
-
-.infoSection {
-}
-*
-
 .infoGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -39,14 +31,11 @@
 
 .infoBlock {
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   padding: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
   }
 }

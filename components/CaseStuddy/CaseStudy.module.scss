@@ -1,0 +1,837 @@
+.caseStudy {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem 0;
+  border-radius: 20px;
+  overflow: visible;
+  opacity: 1;
+  transform: translateY(0);
+  
+  contain: none;
+  isolation: auto;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/case-study/success-case.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: 0;
+  
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 46, 0.85) 0%,
+    rgba(22, 33, 62, 0.75) 50%,
+    rgba(15, 52, 96, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  padding: 4rem 2rem;
+  margin: 0 auto;
+  
+  overflow: visible;
+  contain: none;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3rem;
+  
+  overflow: visible;
+  contain: none;
+}
+
+.header {
+  max-width: 800px;
+}
+
+.label {
+  display: inline-block;
+  background: rgba(100, 255, 218, 0.2);
+  color: #64ffda;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(100, 255, 218, 0.3);
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #ffffff, #64ffda);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 1rem 0;
+}
+
+.duration {
+  font-size: 1rem;
+  color: rgba(100, 255, 218, 0.8);
+  font-weight: 500;
+}
+
+.metrics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.metric {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+  &:hover {
+    box-shadow: 0 20px 40px rgba(100, 255, 218, 0.15);
+    border-color: rgba(100, 255, 218, 0.3);
+  }
+}
+
+.metricSmall {
+  flex: 0 1 180px;
+  min-width: 160px;
+  
+  .metricValue {
+    font-size: 2.5rem;
+  }
+  
+  .metricLabel {
+    font-size: 0.9rem;
+  }
+}
+
+.metricMedium {
+  flex: 0 1 220px;
+  min-width: 200px;
+  
+  .metricValue {
+    font-size: 2.8rem;
+  }
+}
+
+.metricLarge {
+  flex: 0 1 280px;
+  min-width: 240px;
+  
+  .metricValue {
+    font-size: 3.2rem;
+  }
+  
+  .metricLabel {
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+}
+
+.metricExtraLarge {
+  flex: 0 1 320px;
+  min-width: 280px;
+  
+  .metricValue {
+    font-size: 2.2rem;
+    line-height: 1.1;
+  }
+  
+  .metricLabel {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+}
+
+.metricValue {
+  font-weight: 800;
+  color: #64ffda;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.metricLabel {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  word-wrap: break-word;
+  hyphens: auto;
+  text-align: center;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+.multiLineValue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.valueLine {
+  font-size: inherit;
+  line-height: 1;
+}
+
+.valueArrow {
+  font-size: 1.2rem;
+  color: rgba(100, 255, 218, 0.8);
+  margin: 0.1rem 0;
+}
+
+.longValue {
+  font-size: 0.9em;
+  line-height: 1.1;
+  word-break: break-word;
+  hyphens: auto;
+  text-align: center;
+}
+
+.creativesSection {
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 1rem;
+}
+
+.creativesTitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.carouselContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.carouselBtn {
+  background: rgba(100, 255, 218, 0.2);
+  border: 2px solid #64ffda;
+  color: #64ffda;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  cursor: pointer;
+  z-index: 10;
+  flex-shrink: 0;
+
+  &:hover:not(:disabled) {
+    background: #64ffda;
+    color: #1a1a2e;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.carouselWrapper {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.carouselTrack {
+  display: flex;
+  width: 100%;
+}
+
+.carouselSlide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+.slideContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  height: 100%;
+  border: none;
+
+  &:hover {
+    box-shadow: 0 10px 30px rgba(100, 255, 218, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+.mediaWrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.media {
+  width: 100%;
+  height: auto;
+  max-height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #000;
+  display: block;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.videoControls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 15;
+  pointer-events: none;
+
+  .mediaWrapper:hover & {
+    opacity: 1;
+  }
+
+  button {
+    pointer-events: all;
+  }
+}
+
+.playButton {
+  background: rgba(100, 255, 218, 0.95);
+  color: #1a1a2e;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+
+  &:hover {
+    background: #64ffda;
+    box-shadow: 0 8px 30px rgba(100, 255, 218, 0.5);
+  }
+}
+
+.imageControls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 15;
+  pointer-events: none;
+
+  .mediaWrapper:hover & {
+    opacity: 1;
+  }
+
+  button {
+    pointer-events: all;
+  }
+}
+
+.zoomButton {
+  background: rgba(100, 255, 218, 0.95);
+  color: #1a1a2e;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+
+  &:hover {
+    background: #64ffda;
+    box-shadow: 0 6px 25px rgba(100, 255, 218, 0.4);
+  }
+}
+
+.itemTitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #64ffda;
+  text-align: center;
+  padding: 0.5rem;
+  background: rgba(100, 255, 218, 0.1);
+  border-radius: 15px;
+  border: 1px solid rgba(100, 255, 218, 0.3);
+  width: 100%;
+  line-height: 1.2;
+}
+
+.photosSection {
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 2rem;
+}
+
+.photosGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+.photoCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 20px 40px rgba(100, 255, 218, 0.15);
+    border-color: rgba(100, 255, 218, 0.3);
+    
+    .photoOverlay {
+      opacity: 1;
+    }
+    
+    .photo {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.photoWrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  
+  &:hover {
+    .photo {
+      transform: scale(1.05);
+    }
+    
+    .photoOverlay {
+      opacity: 1;
+    }
+  }
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.photoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  border-radius: 12px;
+  gap: 0.5rem;
+}
+
+.zoomIcon {
+  font-size: 2rem;
+  color: #64ffda;
+}
+
+.overlayText {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.photoInfo {
+  text-align: center;
+}
+
+.photoTitle {
+  color: #64ffda;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.photoDescription {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.decorativeElements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floatingElement {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 2px solid rgba(100, 255, 218, 0.2);
+  border-radius: 50%;
+
+  &:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    width: 80px;
+    height: 80px;
+  }
+
+  &:nth-child(2) {
+    top: 20%;
+    right: 15%;
+    width: 60px;
+    height: 60px;
+  }
+
+  &:nth-child(3) {
+    bottom: 15%;
+    left: 20%;
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+
+  .metrics {
+    gap: 1rem;
+  }
+
+  .metricSmall {
+    flex: 0 1 160px;
+    min-width: 140px;
+    
+    .metricValue {
+      font-size: 2.2rem;
+    }
+  }
+
+  .metricMedium {
+    flex: 0 1 200px;
+    min-width: 180px;
+    
+    .metricValue {
+      font-size: 2.5rem;
+    }
+  }
+
+  .metricLarge {
+    flex: 0 1 240px;
+    min-width: 220px;
+    
+    .metricValue {
+      font-size: 2.8rem;
+    }
+  }
+
+  .playButton {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+
+  .zoomButton {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 3rem 1rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .metrics {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .metric {
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .metricSmall,
+  .metricMedium,
+  .metricLarge,
+  .metricExtraLarge {
+    flex: none;
+    min-width: auto;
+    width: 100%;
+    max-width: 320px;
+    padding: 1.2rem 0.8rem;
+    
+    .metricValue {
+      font-size: 2rem;
+      line-height: 1.1;
+    }
+    
+    .metricLabel {
+      font-size: 0.9rem;
+      line-height: 1.3;
+    }
+  }
+  
+  .multiLineValue {
+    .valueLine {
+      font-size: 1.8rem;
+    }
+    
+    .valueArrow {
+      font-size: 1rem;
+    }
+  }
+
+  .backgroundImage {
+    background-attachment: scroll;
+  }
+
+  .photosGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .photoCard {
+    padding: 1rem;
+  }
+
+  .carouselContainer {
+    position: relative;
+  }
+
+  .carouselBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+
+    &:first-child {
+      left: -15px;
+    }
+
+    &:last-child {
+      right: -15px;
+    }
+  }
+
+  .carouselWrapper {
+    width: 100%;
+  }
+
+  .playButton {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+
+  .zoomButton {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+
+  .media {
+    max-height: 150px;
+  }
+
+  .overlayText {
+    font-size: 0.8rem;
+  }
+
+  .zoomIcon {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .label {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .floatingElement {
+    display: none;
+  }
+
+  .slideContent {
+    padding: 0.75rem;
+  }
+
+  .media {
+    max-height: 120px;
+  }
+
+  .itemTitle {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+
+  .metric {
+    padding: 1.2rem;
+  }
+
+  .metricSmall,
+  .metricMedium,
+  .metricLarge,
+  .metricExtraLarge {
+    padding: 1rem 0.6rem;
+    
+    .metricValue {
+      font-size: 1.6rem;
+    }
+    
+    .metricLabel {
+      font-size: 0.8rem;
+    }
+  }
+  
+  .multiLineValue {
+    .valueLine {
+      font-size: 1.4rem;
+    }
+    
+    .valueArrow {
+      font-size: 0.9rem;
+    }
+  }
+  
+  .longValue {
+    font-size: 0.8em;
+  }
+
+  .playButton {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .zoomButton {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .videoControls {
+    gap: 0.5rem;
+  }
+
+  .overlayText {
+    display: none;
+  }
+}

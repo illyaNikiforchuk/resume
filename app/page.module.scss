@@ -1,7 +1,5 @@
 .container {
   min-height: 100vh;
-  // Додайте шлях до вашого головного фонового зображення тут:
-  background-image: url('/images/backgrounds/main-background.jpg');
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   background-size: cover;
   background-position: center;
@@ -11,7 +9,6 @@
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   position: relative;
 
-  // Якщо є фонове зображення, додаємо оверлей
   &::before {
     content: '';
     position: fixed;
@@ -19,18 +16,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(26, 26, 46, 0.7); // Темний оверлей для читабельності
+    background: rgba(26, 26, 46, 0.7);
     z-index: -1;
     pointer-events: none;
   }
 }
-
-// Якщо ви хочете використовувати фонове зображення замість градієнта, розкоментуйте це:
-
-.container {
-  background-image: url('/images/backgrounds/main-background.jpg');
-}
-
 
 .main {
   padding: 2rem 1rem;

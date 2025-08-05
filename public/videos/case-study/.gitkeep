@@ -1,0 +1,11 @@
+# This file keeps the video backgrounds directory in git
+# Add your background videos here:
+# - header-background.mp4
+# - header-background.webm (optional for better browser support)
+# 
+# Video recommendations:
+# - Duration: 10-30 seconds (will loop)
+# - Resolution: 1920x1080 or higher
+# - Format: MP4 (H.264 codec)
+# - File size: Under 10MB for good performance
+# - Content: Subtle, not distracting movements

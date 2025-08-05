@@ -95,10 +95,33 @@ const Carousel = ({ items, title, type, onImageClick }) => {
                         controls
                         poster={item.poster}
                         preload="metadata"
+                        onError={(e) => {
+                          console.error("Video failed to load:", item.src);
+                          e.target.style.display = "none";
+                          e.target.nextSibling.style.display = "block";
+                        }}
                       >
                         <source src={item.src} type="video/mp4" />
+                        <source
+                          src={item.src.replace(".mp4", ".webm")}
+                          type="video/webm"
+                        />
                         Your browser does not support the video tag.
                       </video>
+                      <div
+                        className={styles.videoFallback}
+                        style={{ display: "none" }}
+                      >
+                        <div className={styles.videoError}>
+                          <div className={styles.errorIcon}>📹</div>
+                          <div className={styles.errorText}>
+                            Video not available
+                          </div>
+                          <div className={styles.errorSubtext}>
+                            {item.title}
+                          </div>
+                        </div>
+                      </div>
                       <div className={styles.mediaTitle}>{item.title}</div>
                     </div>
                   ) : (

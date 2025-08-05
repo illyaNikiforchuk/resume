@@ -5,12 +5,10 @@
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(10px);
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: fadeIn 0.3s ease-out;
 }
 
 .lightboxContent {
@@ -37,14 +35,11 @@
   font-size: 1.5rem;
   cursor: pointer;
   z-index: 10001;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
 
   &:hover {
     background: rgba(255, 255, 255, 0.2);
     border-color: #64ffda;
     color: #64ffda;
-    transform: scale(1.1);
   }
 }
 
@@ -61,14 +56,11 @@
   font-size: 2rem;
   cursor: pointer;
   z-index: 10001;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
 
   &:hover {
     background: rgba(255, 255, 255, 0.2);
     border-color: #64ffda;
     color: #64ffda;
-    transform: translateY(-50%) scale(1.1);
   }
 }
 
@@ -83,7 +75,6 @@
 .image {
   border-radius: 10px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  animation: zoomIn 0.3s ease-out;
 }
 
 .imageInfo {
@@ -136,18 +127,15 @@
   overflow: hidden;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: all 0.3s ease;
   opacity: 0.6;
 
   &:hover {
     opacity: 0.8;
-    transform: scale(1.1);
   }
 
   &.activeThumbnail {
     border-color: #64ffda;
     opacity: 1;
-    transform: scale(1.1);
   }
 }
 
@@ -157,28 +145,6 @@
   object-fit: cover;
 }
 
-// Анімації
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-// Респонсивність
 @media (max-width: 768px) {
   .lightboxContent {
     padding: 10px;
@@ -219,7 +185,7 @@
 
 @media (max-width: 480px) {
   .thumbnails {
-    display: none; // Ховаємо мініатюри на дуже маленьких екранах
+    display: none;
   }
 
   .imageInfo {

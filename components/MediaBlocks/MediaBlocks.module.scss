@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  // Додайте шлях до фонового зображення медіа секції тут:
   background-image: url('/images/backgrounds/media-background.jpg');
   background-size: cover;
   background-position: center;
@@ -12,7 +11,6 @@
   padding: 2rem;
   position: relative;
 
-  // Оверлей для фонового зображення
   &::before {
     content: '';
     position: absolute;
@@ -69,14 +67,12 @@
   border-radius: 50%;
   font-size: 1.5rem;
   cursor: pointer;
-  transition: all 0.3s ease;
   z-index: 10;
   flex-shrink: 0;
 
   &:hover:not(:disabled) {
     background: #64ffda;
     color: #1a1a2e;
-    transform: scale(1.1);
   }
 
   &:disabled {
@@ -112,15 +108,12 @@
   align-items: center;
   gap: 0.75rem;
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 1rem;
   height: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(100, 255, 218, 0.15);
   }
 }
@@ -140,6 +133,49 @@
   max-height: 200px;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  background: #000;
+  
+  &::-webkit-media-controls-panel {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  &::-webkit-media-controls-play-button {
+    background-color: #64ffda;
+    border-radius: 50%;
+  }
+}
+
+.videoFallback {
+  width: 100%;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px dashed rgba(100, 255, 218, 0.3);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videoError {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.errorIcon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.5;
+}
+
+.errorText {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.errorSubtext {
+  font-size: 0.8rem;
+  opacity: 0.7;
 }
 
 .imageWrapper {
@@ -174,7 +210,6 @@
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
 }
 
 .imageOverlay {
@@ -188,14 +223,12 @@
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
   border-radius: 8px;
 }
 
 .zoomIcon {
   font-size: 2rem;
   color: #64ffda;
-  animation: pulse 2s infinite;
 }
 
 .mediaTitle {
@@ -225,29 +258,16 @@
   border: none;
   background: rgba(255, 255, 255, 0.3);
   cursor: pointer;
-  transition: all 0.3s ease;
 
   &:hover {
     background: rgba(100, 255, 218, 0.7);
-    transform: scale(1.1);
   }
 
   &.activeIndicator {
     background: #64ffda;
-    transform: scale(1.2);
   }
 }
 
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
-
-// Респонсивність
 @media (max-width: 1200px) {
   .carouselContainer {
     max-width: 1000px;

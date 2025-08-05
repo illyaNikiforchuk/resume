@@ -8,6 +8,7 @@ import MediaBlocks from "../components/MediaBlocks/MediaBlocks";
 import Footer from "../components/Footer/Footer";
 import TextBlock from "../components/TextBlock/TextBlock";
 import ResumePhoto from "../components/ResumePhoto/ResumePhoto";
+import CaseStudy from "../components/CaseStuddy/CaseStudy";
 
 const translations = {
   en: {
@@ -35,6 +36,78 @@ const translations = {
         "Canva",
         "VN",
         "frontend devlopment",
+      ],
+    },
+    caseStudy: {
+      title: "Bangladesh Offer",
+      subtitle:
+        "Two launches — one at the beginning of training, the other at the end",
+      description:
+        "During the first launch, I tested around 10 ad campaigns with different funnels, which later gave me a significant advantage. I now have a clear understanding of what works, how to effectively test creatives, and which metrics to focus on when analyzing campaigns.",
+      metrics: [
+        { value: "9.89%>10.34%", label: "CR-TO-REG" },
+        { value: "1.65%>4.93", label: "CR-TO-DEP" },
+        { value: "16.67%>47.62", label: "CR-REG-TO-DEP" },
+        { value: "-72%>+83%", label: "ROI" },
+      ],
+      creativesTitle: "Creative Assets Used",
+      creatives: [
+        {
+          src: "/videos/case-study/demo1.mp4",
+          title: "Design",
+        },
+        {
+          src: "/videos/case-study/demo2.mp4",
+          title: "Design",
+        },
+        {
+          src: "/videos/case-study/demo3.mp4",
+          title: "Design",
+        },
+        {
+          src: "/videos/case-study/demo4.mp4",
+          title: "Design",
+        },
+        {
+          src: "/videos/case-study/demo5.mp4",
+          title: "Design",
+        },
+        {
+          src: "/videos/case-study/demo6.mp4",
+          title: "Design",
+        },
+        {
+          src: "/videos/case-study/demo7.mp4",
+          title: "Design",
+        },
+        {
+          src: "/videos/case-study/demo8.mp4",
+          title: "Design",
+        },
+        {
+          src: "/videos/case-study/demo9.mp4",
+          title: "Design",
+        },
+
+        {
+          src: "/videos/case-study/demo2.mp4",
+          poster: "/images/case-study/video2-poster.jpg",
+          title: "Design",
+        },
+        {
+          src: "/images/case-study/creative4.jpg",
+          title: "Design",
+        },
+      ],
+      photos: [
+        {
+          src: "/videos/case-study/before.png",
+          title: "Before",
+        },
+        {
+          src: "/videos/case-study/after.png",
+          title: "After ",
+        },
       ],
     },
     education: {
@@ -92,6 +165,69 @@ const translations = {
         "frontend devlopment",
       ],
     },
+    caseStudy: {
+      title: "Офер Бангладеш",
+      subtitle: "Два запуски перший на початку навчання другий у кінці  ",
+      description:
+        "Під час першого запуску було протестовано близько 10 рекламних кампаній із різними зв’язками, що в майбутньому дало мені вагому перевагу.Я вже маю чітке розуміння того, що працює, як ефективно тестувати креативи та на які показники слід звертати увагу під час аналізу кампаній.",
+      metrics: [
+        { value: "9.89%>10.34%", label: "CR-TO-REG" },
+        { value: "1.65%>4.93", label: "CR-TO-DEP" },
+        { value: "16.67%>47.62", label: "CR-REG-TO-DEP" },
+        { value: "-72%>+83%", label: "ROI" },
+      ],
+      creativesTitle: "Використані креативи",
+      creatives: [
+        {
+          src: "/videos/case-study/demo3.mp4",
+          title: "Дизайн",
+        },
+        {
+          src: "/videos/case-study/demo2.mp4",
+          title: "Дизайн",
+        },
+        {
+          src: "/videos/case-study/demo1.mp4",
+          title: "Дизайн",
+        },
+        {
+          src: "/videos/case-study/demo4.mp4",
+          title: "Дизайн",
+        },
+        {
+          src: "/videos/case-study/demo5.mp4",
+          title: "Дизайн",
+        },
+        {
+          src: "/videos/case-study/demo6.mp4",
+          title: "Дизайн",
+        },
+        {
+          src: "/videos/case-study/demo7.mp4",
+          title: "Дизайн",
+        },
+        {
+          src: "/videos/case-study/demo8.mp4",
+          title: "Дизайн",
+        },
+        {
+          src: "/videos/case-study/demo9.mp4",
+          title: "Дизайн",
+        },
+      ],
+
+      photos: [
+        {
+          src: "/videos/case-study/before.png",
+          title: "До ",
+        },
+        {
+          src: "/videos/case-study/after.png",
+          title: "Після ",
+        },
+      ],
+    },
+
     education: {
       title: "Освіта",
       items: [
@@ -122,7 +258,7 @@ const translations = {
 };
 
 export default function Home() {
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState("uk");
   const t = translations[language];
 
   return (
@@ -141,6 +277,8 @@ export default function Home() {
           skills={t.skills}
           education={t.education}
         />
+        <CaseStudy caseStudy={t.caseStudy} />
+
         <MediaBlocks />
         <TextBlock title={t.textBlock.title} content={t.textBlock.content} />
       </main>

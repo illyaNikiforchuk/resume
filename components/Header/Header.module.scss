@@ -7,13 +7,11 @@
   display: flex;
   align-items: center;
 
-  // Fallback фон якщо відео не завантажується
   background-image: url('/images/backgrounds/header-background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  // Основний оверлей для читабельності
   &::before {
     content: '';
     position: absolute;
@@ -23,7 +21,6 @@
     bottom: 0;
     background: rgba(0, 0, 0, 0.6);
     z-index: 1;
-    backdrop-filter: blur(1px);
   }
 }
 
@@ -48,11 +45,6 @@
   transform: translate(-50%, -50%);
   object-fit: cover;
   z-index: 0;
-
-  // Додаткові стилі для кращої продуктивності
-  will-change: transform;
-  backface-visibility: hidden;
-  perspective: 1000px;
 }
 
 .container {
@@ -80,7 +72,6 @@
   border: 3px solid #64ffda;
   box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
   background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
 }
 
 .photo {
@@ -91,7 +82,6 @@
 .languageToggle {
   display: flex;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
   border-radius: 25px;
   padding: 4px;
   gap: 4px;
@@ -107,11 +97,9 @@
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 500;
-  transition: all 0.3s ease;
 
   &:hover {
     background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-1px);
   }
 
   &.active {
@@ -154,11 +142,9 @@
   background: rgba(0, 0, 0, 0.2);
   padding: 1rem;
   border-radius: 10px;
-  backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-// Респонсивність
 @media (max-width: 768px) {
   .header {
     min-height: 300px;
@@ -184,13 +170,11 @@
     padding: 0.8rem;
   }
 
-  // На мобільних пристроях відео може не відтворюватися автоматично
   .backgroundVideo {
     display: none;
   }
 
   .header {
-    // Використовуємо статичне зображення на мобільних
     background-image: url('/images/backgrounds/header-background.jpg');
   }
 }
@@ -208,27 +192,5 @@
   .photo {
     width: 120px;
     height: 120px;
-  }
-}
-
-// Додаткові стилі для кращої продуктивності відео
-@media (prefers-reduced-motion: reduce) {
-  .backgroundVideo {
-    display: none;
-  }
-}
-
-// Для браузерів що не підтримують backdrop-filter
-@supports not (backdrop-filter: blur(10px)) {
-  .header::before {
-    background: rgba(0, 0, 0, 0.8);
-  }
-  
-  .languageToggle {
-    background: rgba(0, 0, 0, 0.5);
-  }
-  
-  .description {
-    background: rgba(0, 0, 0, 0.6);
   }
 }
